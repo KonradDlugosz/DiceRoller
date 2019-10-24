@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,8 +20,9 @@ public class MainActivity extends AppCompatActivity {
     int counter = 0;
     private EditText userInput;
     private int intuserInput;
-    private int num ;
+    private int num1, num2 ;
     private ArrayList<String> arr = new ArrayList<String>();
+    public Context context = MainActivity.this;
 
 
     @Override
@@ -39,9 +41,8 @@ public class MainActivity extends AppCompatActivity {
     {
         //get input and display
         intuserInput= Integer.parseInt(userInput.getText().toString());
-        tv.setText(Integer.toString(num));
-        Context context = MainActivity.this;
-        num = roll_the_dice();
+        num1 = roll_the_dice();
+        tv.setText(Integer.toString(num1));
 
         //Compare numbers
         if( intuserInput > 6 || intuserInput < 1){
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(context, textToShow, Toast.LENGTH_SHORT).show();
 
         }
-        else if(num == intuserInput) {
+        else if(num1 == intuserInput) {
             //Count score
             counter = counter + 1;
             score.setText(Integer.toString(counter));
@@ -62,31 +63,31 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void d_icebreakers(View view){
-        num = roll_the_dice();
-        switch (num){
+         num2 = roll_the_dice();
+        switch (num2){
             case 1:
                 score.setText(arr.get(0));
-                tv.setText(Integer.toString(num));
+                tv.setText(Integer.toString(num2));
                 break;
             case 2:
                 score.setText(arr.get(1));
-                tv.setText(Integer.toString(num));
+                tv.setText(Integer.toString(num2));
                 break;
             case 3:
                 score.setText(arr.get(2));
-                tv.setText(Integer.toString(num));
+                tv.setText(Integer.toString(num2));
                 break;
             case 4:
                 score.setText(arr.get(3));
-                tv.setText(Integer.toString(num));
+                tv.setText(Integer.toString(num2));
                 break;
             case 5:
                 score.setText(arr.get(4));
-                tv.setText(Integer.toString(num));
+                tv.setText(Integer.toString(num2));
                 break;
             case 6:
                 score.setText(arr.get(5));
-                tv.setText(Integer.toString(num));
+                tv.setText(Integer.toString(num2));
                 break;
 
         }
