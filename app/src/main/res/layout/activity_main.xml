@@ -13,11 +13,11 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="351dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:text="Enter a number from 1 - 6 to match the dice"
+            android:text="Enter a number from 1 to 6"
             android:textSize="30sp" />
 
         <TextView
@@ -51,14 +51,23 @@
             android:textAlignment="center"/>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/bt_lucky"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:onClick="bt_lucky"
+            android:text="I'm feeling lucky!"
+            android:textSize="30sp" />
+
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="on_button_click"
-            android:text="Roll the dice!"
-            android:textSize="30sp"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="10dp"
+            android:onClick="d_icebreakers"
+            android:text="Let's play D-ICEBREAKERS"
+            android:textSize="30sp" />
 
     </LinearLayout>
 
